@@ -11,6 +11,7 @@ public class Main {
         ReajusteService reajusteService = new ReajusteService();
 
         reajusteService.reajustarSalarioDoFuncionario(funcionario, new BigDecimal("44.9"));
+        reajusteService.reajustarSalarioDoFuncionario(funcionario, new BigDecimal("44.9"));
 
         System.out.println(funcionario.getSalario());
 
