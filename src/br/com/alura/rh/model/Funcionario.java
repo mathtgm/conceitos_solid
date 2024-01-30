@@ -8,18 +8,13 @@ import java.time.LocalDate;
 
 public class Funcionario {
 
-    private String nome;
-    private String cpf;
-    private Cargo cargo;
+
+    private DadosPessoais dadosPessoais;
     private BigDecimal salario;
     private LocalDate dataUltimoAjuste;
 
-    public Funcionario() {}
-
     public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.cargo = cargo;
+        this.dadosPessoais = new DadosPessoais(nome, cpf, cargo);
         this.salario = salario;
     }
 
@@ -36,27 +31,11 @@ public class Funcionario {
         return dataUltimoAjuste;
     }
 
-    public String getNome() {
-        return nome;
+    public DadosPessoais getDadosPessoais() {
+        return dadosPessoais;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public Cargo getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
+    public void promover(Cargo novoCargo) {
+        this.dadosPessoais.setCargo(novoCargo);
     }
 }
